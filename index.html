@@ -1,20 +1,88 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
     <title>Document</title>
 </head>
-<body>
-    <nav>
-        <input type="search" name="search" id="search">
-        <button type="submit">Pesquisar</button>
-    </nav>
-    <style>
 
+<body>
+    <header>
+        <h1 class="inter-title">BookHome</h1>
+        <p></p>
+        <nav>
+            <input type="search" name="search" id="search">
+            <button type="submit">Pesquisar</button>
+        </nav>
+    </header>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .inter-title {
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 900;
+            font-style: normal;
+            font-size: 50px;
+        }
+
+
+        header {
+            height: 15vh;
+            width: 100vw;
+            background-color: #4EA2EE;
+        }
+
+        h1 {
+            text-align: left;
+            padding-top: 15px;
+            padding-left: 15px;
+            color: #0B278C;
+        }
+
+        nav {
+            text-align: right;
+            margin-right: 15px;
+            margin-bottom: 15px;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        nav>input {
+            padding: 10px;
+            border-radius: 15px;
+            border: none;
+            background-color: rgb(31, 75, 156);
+            color: aliceblue;
+            font-weight: bolder;
+            font-size: large;
+        }
+
+        nav>button{
+            color: aliceblue;
+            background-color: #0B278C;
+            border: none;
+            padding: 10px;
+            border-radius: 15px;;
+            font-weight: bolder;
+        }
     </style>
     <script>
-        barraPesquisa = document.getElementById('search')
+
+        barraPesquisa = document.getElementById('search');
     </script>
 </body>
+
 </html>
