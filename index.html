@@ -16,12 +16,27 @@
     <header>
         <h1 class="inter-title">BookHome</h1>
         <p></p>
-        <nav>
-            <input type="search" name="search" id="search">
-            <button type="submit">Pesquisar</button>
-        </nav>
     </header>
-
+    <section id="principal">
+        <img src="" alt="logo BookHome">
+        <p>Compre livros físicos de forma <span>Eficiente</span> e <span>Segura</span>.</p>
+    </section>
+    
+    <section id="livros">
+        <h1>Catálogo de Livros</h1>
+        <label for="pesquisa">Pesquisa</label>
+        <input type="search" name="pesquisa" id="pesquisa" placeholder="Digite o título aqui.">
+        <section id="catalogo">
+            <div class="cards">
+                <img src="" alt="">
+                <p class="titulo"></p>
+                <p class="autor"></p>
+                <p class="categoria"></p>
+                <button>Adicionar ao Carrinho</button>
+            </div>
+        </section>
+    </section>
+    
     <style>
         * {
             padding: 0;
@@ -43,46 +58,106 @@
             background-color: #4EA2EE;
         }
 
-        h1 {
+        #principal {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 15px;
+            gap: 20px;
+            font-size: 30px;
+        }
+
+        #principal span {
+            font-weight: bold;
+        }
+
+        header h1 {
             text-align: left;
             padding-top: 15px;
             padding-left: 15px;
             color: #0B278C;
         }
 
-        nav {
-            text-align: right;
-            margin-right: 15px;
-            margin-bottom: 15px;
+        #livros {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            font-family: 'Courier New', Courier, monospace;
         }
 
-        input:focus {
+        #livros h1 {
+            margin-top: 100px;
+            margin-bottom: 100px;
+            font-size: 50px;
+        }
+
+        #livros label {
+            font-weight: bolder;
+        }
+
+        #livros input {
             outline: none;
-        }
-
-        nav>input {
             padding: 10px;
             border-radius: 15px;
-            border: none;
-            background-color: rgb(31, 75, 156);
+            border: solid black;
             color: aliceblue;
             font-weight: bolder;
             font-size: large;
         }
 
-        nav>button{
-            color: aliceblue;
-            background-color: #0B278C;
-            border: none;
-            padding: 10px;
-            border-radius: 15px;;
-            font-weight: bolder;
+        #livros input::placeholder {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #catalogo {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            padding: 20px;
+            gap: 20px;
+            overflow-y: auto;
+            justify-items: center;
+            
+            border: solid grey;
+            margin-top: 20px;
+            width: 90vw;
+            height: 70vh;
+            border-radius: 50px;
+        }
+
+        .cards {
+            height: 200px;
+            width: 150px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: all 1s;
+        }
+
+        .cards img {
+            height: 80px;
+            object-fit: contain;
+        }
+
+        .cards .titulo {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .cards .autor {
+            font-size: 12px;
+            color: #555;
+        }
+
+        .cards .categoria {
+            font-size: 11px;
+            color: #888;
+            font-style: italic;
         }
     </style>
-    <script>
-
-        barraPesquisa = document.getElementById('search');
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
