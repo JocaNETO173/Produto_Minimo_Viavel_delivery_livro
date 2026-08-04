@@ -14,11 +14,11 @@
 
 <body>
     <header>
-        <h1 class="inter-title">BookHome</h1>
+        <img src="BookHOME_icon_text.png" alt="logo BookHome">
         <p></p>
     </header>
     <section id="principal">
-        <img src="" alt="logo BookHome">
+        <img src="BookHOME_icon_text.png" alt="logo BookHome">
         <p>Compre livros físicos de forma <span>Eficiente</span> e <span>Segura</span>.</p>
     </section>
     
@@ -28,11 +28,6 @@
         <input type="search" name="pesquisa" id="pesquisa" placeholder="Digite o título aqui.">
         <section id="catalogo">
             <div class="cards">
-                <img src="" alt="">
-                <p class="titulo"></p>
-                <p class="autor"></p>
-                <p class="categoria"></p>
-                <button>Adicionar ao Carrinho</button>
             </div>
         </section>
     </section>
@@ -71,11 +66,21 @@
             font-weight: bold;
         }
 
-        header h1 {
+        #principal p {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #principal img {
+            filter: drop-shadow(5px 5px 0px black);
+        }
+
+        header img {
+            height: 100px;
             text-align: left;
             padding-top: 15px;
             padding-left: 15px;
             color: #0B278C;
+            filter: drop-shadow(2.5px 2.5px 0px black);
         }
 
         #livros {
@@ -101,7 +106,7 @@
             padding: 10px;
             border-radius: 15px;
             border: solid black;
-            color: aliceblue;
+            color: black;
             font-weight: bolder;
             font-size: large;
         }
@@ -114,7 +119,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             padding: 20px;
-            gap: 20px;
+            gap: 35px;
             overflow-y: auto;
             justify-items: center;
             
@@ -127,17 +132,22 @@
 
         .cards {
             height: 200px;
-            width: 150px;
+            width: 160px;
 
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            margin-top: 50px;
             transition: all 1s;
         }
 
+        .cards:hover {
+            transform: scale(1.1);
+        }
+
         .cards img {
-            height: 80px;
+            height: 150px;
             object-fit: contain;
         }
 
@@ -155,6 +165,24 @@
             font-size: 11px;
             color: #888;
             font-style: italic;
+        }
+
+        .cards button {
+            border: none;
+            border-radius: 50px;
+            color: aliceblue;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bolder;
+            background-color: #83c586;
+            margin-top: 10px;
+            padding: 5px;
+            transition: all 1s;
+            
+        }
+
+        .cards button:hover {
+            background-color: #6a9b6c;
+            transform: scale(1.1);
         }
     </style>
     <script src="script.js"></script>
