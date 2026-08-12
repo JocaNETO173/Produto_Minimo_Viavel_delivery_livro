@@ -18,13 +18,19 @@
     <form id="formLivro" action="addLivro()" method="post">
         <h1>Adicione seu Livro.</h1>
         <label for="titulo">Título</label>
-        <input type="text" name="titulo" id="" placeholder="Escreva aqui.">
-        <input type="text" name="" id="" placeholder="Escreva aqui.">
-        <input type="text" name="" id="" placeholder="Escreva aqui.">
-        <input type="file" name="" id="">
+        <input type="text" name="titulo" id="tituloUpado" placeholder="Escreva aqui.">
+        <label for="autor"></label>
+        <input type="text" name="autor" id="autorUpado" placeholder="Escreva aqui.">
+        <input type="text" name="categoria" id="categoriaUpada" placeholder="Escreva aqui.">
+        <input type="file" name="capa" id="capaUpada">
         <button type="submit">Confirmar</button>
     </form>
     
-    <script src="script.js"></script>
+    <script src="script.js">
+        function addLivro(capa, titulo, autor, categoria){
+            
+        }
+
+    </script>
 </body>
 </html>
