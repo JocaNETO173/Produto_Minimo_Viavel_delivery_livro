@@ -45,3 +45,25 @@ function renderizarLivros(){
 }
 
 renderizarLivros()
+
+const container = document.getElementById('teste')
+container.innerHTML = '';
+const previewImagem = document.getElementById('imagemTeste')
+function addLivro(capa, titulo, autor, categoria){
+    container.innerHTML += `<img id="imagemTeste" src="${capa.value} alt="capa">`
+    function uparImagem(input){
+        if(input.files && input.files[0]){
+            const urlImagem = URL.createObjectURL(input.files[0]);
+            
+            previewImagem.src
+        }
+        
+        return urlImagem;
+    }
+    
+    
+    
+    // livros.forEach(livro => {
+        
+    // });
+}

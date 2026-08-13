@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <style>
-    #formLivro{
+    .container {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 5px;
     }
 </style>
-<body>
 
-    <form id="formLivro" action="addLivro()" method="post">
+<body>
+    <div class="container">
         <h1>Adicione seu Livro.</h1>
         <label for="titulo">Título</label>
         <input type="text" name="titulo" id="tituloUpado" placeholder="Escreva aqui.">
@@ -23,14 +24,16 @@
         <input type="text" name="autor" id="autorUpado" placeholder="Escreva aqui.">
         <input type="text" name="categoria" id="categoriaUpada" placeholder="Escreva aqui.">
         <input type="file" name="capa" id="capaUpada">
-        <button type="submit">Confirmar</button>
-    </form>
-    
+        <button onclick="addLivro(urlImagem,tituloUpado,autorUpado,categoriaUpada)">Confirmar</button>
+    </div>
+    <div id="teste"></div>
+
+
     <script src="script.js">
-        function addLivro(capa, titulo, autor, categoria){
-            
-        }
+
+
 
     </script>
 </body>
+
 </html>
