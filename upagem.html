@@ -20,11 +20,13 @@
         <h1>Adicione seu Livro.</h1>
         <label for="titulo">Título</label>
         <input type="text" name="titulo" id="tituloUpado" placeholder="Escreva aqui.">
-        <label for="autor"></label>
+        <label for="autor">Autor</label>
         <input type="text" name="autor" id="autorUpado" placeholder="Escreva aqui.">
+        <label for="categoria">Categoria</label>
         <input type="text" name="categoria" id="categoriaUpada" placeholder="Escreva aqui.">
-        <input type="file" name="capa" id="capaUpada">
-        <button onclick="addLivro(urlImagem,tituloUpado,autorUpado,categoriaUpada)">Confirmar</button>
+        <label for="capa">Capa do Livro</label>
+        <input type="text" name="capa" id="capaUpada" placeholder="URL da Imagem">
+        <button onclick="addLivro()">Confirmar</button>
     </div>
     <div id="teste"></div>
 

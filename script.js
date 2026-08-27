@@ -1,7 +1,7 @@
 const livros = [
     {
         id: 1,
-        capa: 'pequenoprincipe.jpg',
+        capa: '/img/pequenoprincipe.jpg',
         titulo: 'O Pequeno Príncipe',
         autor: 'Antoine de Saint-Exupéry', 
         categoria: 'Literatura Infantil'
@@ -9,7 +9,7 @@ const livros = [
 
     {
         id: 2,
-        capa: 'domquixote.jpg',
+        capa: '/img/domquixote.jpg',
         titulo: 'Dom Quixote',
         autor: 'Miguel de Cervantes', 
         categoria: 'Romance'
@@ -17,7 +17,7 @@ const livros = [
 
     {
         id: 3,
-        capa: 'coraline.jpg',
+        capa: '/img/coraline.jpg',
         titulo: 'Coraline',
         autor: 'Neil Gaiman', 
         categoria: 'Fantasia e Ficção  Científica'
@@ -46,24 +46,20 @@ function renderizarLivros(){
 
 renderizarLivros()
 
-const container = document.getElementById('teste')
-container.innerHTML = '';
-const previewImagem = document.getElementById('imagemTeste')
-function addLivro(capa, titulo, autor, categoria){
-    container.innerHTML += `<img id="imagemTeste" src="${capa.value} alt="capa">`
-    function uparImagem(input){
-        if(input.files && input.files[0]){
-            const urlImagem = URL.createObjectURL(input.files[0]);
-            
-            previewImagem.src
-        }
-        
-        return urlImagem;
-    }
-    
-    
-    
-    // livros.forEach(livro => {
-        
-    // });
+const devIcon = document.querySelector('.dev-icon');
+devIcon.addEventListener('click', () => {
+       
+}
+
+function addLivro(){
+    const novoLivro = {
+        id: livros.length + 1,
+        capa: '/img/novo_livro.jpg',
+        titulo: 'Novo Livro',
+        autor: 'Autor Desconhecido',
+        categoria: 'Categoria Desconhecida'
+    };
+
+    livros.push(novoLivro);
+    renderizarLivros();
 }
