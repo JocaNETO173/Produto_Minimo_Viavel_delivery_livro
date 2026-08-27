@@ -1,0 +1,218 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.inter-title {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 50px;
+}
+
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 15vh;
+    width: 100vw;
+    background-color: #4EA2EE;
+}
+
+#principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    gap: 20px;
+    font-size: 30px;
+}
+
+#principal span {
+    font-weight: bold;
+}
+
+#principal p {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#principal img {
+    filter: drop-shadow(5px 5px 0px black)
+            drop-shadow(2px 2px 0px black)
+            drop-shadow(1px 1px 0px black);
+}
+
+header img {
+    height: 120px;
+    text-align: left;
+    padding-top: 15px;
+    padding-left: 15px;
+    color: #0B278C;
+    filter: drop-shadow(1.5px 1.5px 0px black);
+}
+
+.dev-icon {
+    background-image: url(/img/code.png);
+    background-size: cover;
+    width: 65px;
+    height: 65px;
+    margin-right: 100px;
+    cursor: pointer;
+
+}
+
+#livros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#livros h1 {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    font-size: 50px;
+}
+
+#livros label {
+    font-weight: bolder;
+}
+
+#livros input {
+    outline: none;
+    padding: 10px;
+    border-radius: 15px;
+    border: solid black;
+    color: black;
+    font-weight: bolder;
+    font-size: large;
+}
+
+#livros input::placeholder {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#catalogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    padding: 20px;
+    gap: 35px;
+    overflow-y: auto;
+    justify-items: center;
+    
+    border: solid grey;
+    margin-top: 20px;
+    width: 90vw;
+    height: 70vh;
+    border-radius: 50px;
+}
+
+.cards {
+    height: 200px;
+    width: 160px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    transition: all 1s;
+}
+
+.cards:hover {
+    transform: scale(1.1);
+}
+
+.cards img {
+    height: 150px;
+    object-fit: contain;
+}
+
+.cards .titulo {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.cards .autor {
+    font-size: 12px;
+    color: #555;
+}
+
+.cards .categoria {
+    font-size: 11px;
+    color: #888;
+    font-style: italic;
+}
+
+.cards button {
+    border: none;
+    border-radius: 50px;
+    color: aliceblue;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    background-color: #83c586;
+    margin-top: 10px;
+    padding: 5px;
+    transition: all 1s;
+    cursor: pointer;
+
+
+}
+
+.cards button:hover {
+    background-color: #6a9b6c;
+    transform: scale(1.1);
+}
+
+.telaUpagem {
+    position: absolute; /* Para posicionar em relação ao .dev-icon */
+    top: 100%; /* Abre logo abaixo do .dev-icon */
+    left: 0; /* Alinha à esquerda do .dev-icon */
+    width: 300px; /* Define a largura da caixinha */
+    background-color: #ffffff; /* Fundo branco */
+    border: 1px solid #ccc; /* Borda cinza */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+    padding: 15px; /* Espaçamento interno */
+    display: block; /* Inicialmente escondida */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+}
+
+.telaUpagem h1 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.telaUpagem label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.telaUpagem input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.telaUpagem button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: #4EA2EE;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.telaUpagem button:hover {
+    background-color: #3a8bd6;
+}
