@@ -16,25 +16,28 @@
 <body>
     <header>
         <img src="./img/bookhome_icon.png" alt="logo BookHome">
-        <span class="dev-icon"></span>
+        <div class="dev-icon">
+            <div class="telaUpagem" id="telaUpagem">
+                <h1>Adicione seu Livro.</h1>
+                <label for="titulo">Título</label>
+                <input type="text" name="titulo" id="tituloUpado" placeholder="Escreva aqui.">
+                <label for="autor">Autor</label>
+                <input type="text" name="autor" id="autorUpado" placeholder="Escreva aqui.">
+                <label for="categoria">Categoria</label>
+                <input type="text" name="categoria" id="categoriaUpada" placeholder="Escreva aqui.">
+                <label for="capa">Capa do Livro</label>
+                <input type="url" name="capa" id="capaUpada" placeholder="URL da Imagem">
+                <button onclick="addLivro()">Confirmar</button>
+            </div>
+        </div>
+
     </header>
-    <div class="telaUpagem">
-        <h1>Adicione seu Livro.</h1>
-        <label for="titulo">Título</label>
-        <input type="text" name="titulo" id="tituloUpado" placeholder="Escreva aqui.">
-        <label for="autor">Autor</label>
-        <input type="text" name="autor" id="autorUpado" placeholder="Escreva aqui.">
-        <label for="categoria">Categoria</label>
-        <input type="text" name="categoria" id="categoriaUpada" placeholder="Escreva aqui.">
-        <label for="capa">Capa do Livro</label>
-        <input type="text" name="capa" id="capaUpada" placeholder="URL da Imagem">
-        <button onclick="addLivro()">Confirmar</button>
-    </div>
+
     <section id="principal">
         <img src="/img/bookhome_icon.png" alt="logo BookHome">
         <p>Compre livros físicos de forma <span>Eficiente</span> e <span>Segura</span>.</p>
     </section>
-    
+
     <section id="livros">
         <h1>Catálogo de Livros</h1>
         <label for="pesquisa">Pesquisa</label>

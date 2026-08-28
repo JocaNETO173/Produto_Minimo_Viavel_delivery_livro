@@ -44,22 +44,52 @@ function renderizarLivros(){
     })
 }
 
+
+
 renderizarLivros()
 
+function filtrarLivros(){
+    const termoPesquisa = pesquisa.value.toLowerCase();
+    const livrosFiltrados = livros.filter(livro => 
+        livro.titulo.toLowerCase().includes(termoPesquisa) ||
+        livro.autor.toLowerCase().includes(termoPesquisa) ||
+        livro.categoria.toLowerCase().includes(termoPesquisa)
+    );
+
+    catalogo.innerHTML = '';
+
+    livrosFiltrados.forEach(livro =>{
+        catalogo.innerHTML += `
+            <div class="cards">
+                <img src="${livro.capa}" alt="${livro.titulo}_imagem">
+                <p class="titulo">${livro.titulo}</p>
+                <p class="autor">${livro.autor}</p>
+                <p class="categoria">${livro.categoria}</p>
+                <button>Adicionar ao Carrinho</button>
+            </div>
+            `
+    }
+}
+
+const telaUpagem = document.getElementById('telaUpagem');
 const devIcon = document.querySelector('.dev-icon');
-devIcon.addEventListener('click', () => {
-       
-}
+devIcon.addEventListener('click', () =>{
+    if (telaUpagem.style.display === 'block') {
+        telaUpagem.style.display = 'none';
+    } else {
+        telaUpagem.style.display = 'block';
+    }
+})
 
-function addLivro(){
-    const novoLivro = {
-        id: livros.length + 1,
-        capa: '/img/novo_livro.jpg',
-        titulo: 'Novo Livro',
-        autor: 'Autor Desconhecido',
-        categoria: 'Categoria Desconhecida'
-    };
+// function addLivro(){
+//     const novoLivro = {
+//         id: livros.length + 1,
+//         capa: '/img/novo_livro.jpg',
+//         titulo: 'Novo Livro',
+//         autor: 'Autor Desconhecido',
+//         categoria: 'Categoria Desconhecida'
+//     };
 
-    livros.push(novoLivro);
-    renderizarLivros();
-}
+//     livros.push(novoLivro);
+//     renderizarLivros();
+// }

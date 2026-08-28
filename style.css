@@ -60,6 +60,7 @@ header img {
     height: 65px;
     margin-right: 100px;
     cursor: pointer;
+    position: relative;
 
 }
 
@@ -170,14 +171,14 @@ header img {
 .telaUpagem {
     position: absolute; /* Para posicionar em relação ao .dev-icon */
     top: 100%; /* Abre logo abaixo do .dev-icon */
-    left: 0; /* Alinha à esquerda do .dev-icon */
+    left: -200px; /* Alinha à esquerda do .dev-icon */
     width: 300px; /* Define a largura da caixinha */
     background-color: #ffffff; /* Fundo branco */
     border: 1px solid #ccc; /* Borda cinza */
     border-radius: 10px; /* Bordas arredondadas */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
     padding: 15px; /* Espaçamento interno */
-    display: block; /* Inicialmente escondida */
+    display: none; /* Inicialmente escondida */
     z-index: 1000; /* Garante que fique acima de outros elementos */
 }
 
@@ -194,7 +195,7 @@ header img {
 }
 
 .telaUpagem input {
-    width: 100%;
+    width: 95%;
     padding: 8px;
     margin-top: 5px;
     border: 1px solid #ccc;
