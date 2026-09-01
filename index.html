@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="style.css">
@@ -16,9 +17,9 @@
 <body>
     <header>
         <img src="./img/bookhome_icon.png" alt="logo BookHome">
-        <div class="dev-icon">
+        <span id="dev-icon">
             <div class="telaUpagem" id="telaUpagem">
-                <h1>Adicione seu Livro.</h1>
+                <h1>Adicione seu Livro</h1>
                 <label for="titulo">Título</label>
                 <input type="text" name="titulo" id="tituloUpado" placeholder="Escreva aqui.">
                 <label for="autor">Autor</label>
@@ -27,9 +28,9 @@
                 <input type="text" name="categoria" id="categoriaUpada" placeholder="Escreva aqui.">
                 <label for="capa">Capa do Livro</label>
                 <input type="url" name="capa" id="capaUpada" placeholder="URL da Imagem">
-                <button onclick="addLivro()">Confirmar</button>
+                <button onclick="addLivro(capaUpada, tituloUpado, autorUpado, categoriaUpada)">Confirmar</button>
             </div>
-        </div>
+        </span>
 
     </header>
 

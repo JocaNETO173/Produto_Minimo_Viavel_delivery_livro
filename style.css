@@ -53,7 +53,7 @@ header img {
     filter: drop-shadow(1.5px 1.5px 0px black);
 }
 
-.dev-icon {
+#dev-icon {
     background-image: url(/img/code.png);
     background-size: cover;
     width: 65px;
@@ -129,6 +129,7 @@ header img {
 
 .cards img {
     height: 150px;
+    max-width: 150px;
     object-fit: contain;
 }
 

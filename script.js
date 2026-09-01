@@ -69,10 +69,12 @@ function filtrarLivros(){
             </div>
             `
     }
-}
+)}
+
+pesquisa.addEventListener('input', filtrarLivros);
 
 const telaUpagem = document.getElementById('telaUpagem');
-const devIcon = document.querySelector('.dev-icon');
+const devIcon = document.getElementById('dev-icon');
 devIcon.addEventListener('click', () =>{
     if (telaUpagem.style.display === 'block') {
         telaUpagem.style.display = 'none';
@@ -81,15 +83,19 @@ devIcon.addEventListener('click', () =>{
     }
 })
 
-// function addLivro(){
-//     const novoLivro = {
-//         id: livros.length + 1,
-//         capa: '/img/novo_livro.jpg',
-//         titulo: 'Novo Livro',
-//         autor: 'Autor Desconhecido',
-//         categoria: 'Categoria Desconhecida'
-//     };
+telaUpagem.addEventListener('click', (event) => {
+    event.stopPropagation();
+});
 
-//     livros.push(novoLivro);
-//     renderizarLivros();
-// }
+function addLivro(capaUpada, tituloUpado, autorUpado, categoriaUpada){
+    const novoLivro = {
+        id: livros.length + 1,
+        capa: capaUpada.value,
+        titulo: tituloUpado.value,
+        autor: autorUpado.value,
+        categoria: categoriaUpada.value
+    };
+
+    livros.push(novoLivro);
+    renderizarLivros();
+}
