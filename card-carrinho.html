@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    .card-carrinho {
+        width: 550px;
+        height: 740px;
+        background-color: rgb(187, 187, 187);
+        border-radius: 35px;
+    }
+
+    .cards {
+        width: 100%;
+        height: 150px;
+        background-color: rgb(218, 218, 218);
+        border-radius: 35px;
+    }
+</style>
+
+<body>
+    <div class="card-carrinho" id="card-carrinho">
+
+    </div>
+    <script>
+        const carrinho = [
+            {
+                id: 1,
+                capa: '/img/pequenoprincipe.jpg',
+                titulo: 'O Pequeno Príncipe',
+                autor: 'Antoine de Saint-Exupéry',
+                categoria: 'Literatura Infantil'
+            }
+        ]
+
+        const c = document.getElementById('card-carrinho');
+        c.innerHTML = "";
+        carrinho.forEach(cLivro => {
+            c.innerHTML += `
+                <div class="cards">
+                    <img src="${livro.capa}" alt="${livro.titulo}_imagem">
+                    <p class="titulo">${livro.titulo}</p>
+                    <p class="autor">${livro.autor}</p>
+                    <p class="categoria">${livro.categoria}</p>
+                </div>
+                `
+        })
+            ;
+    </script>
+</body>
+
+</html>

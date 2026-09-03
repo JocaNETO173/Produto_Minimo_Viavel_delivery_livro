@@ -25,6 +25,18 @@ const livros = [
 
 ]
 
+const carrinho = []
+
+function addCarrinho() {
+    carrinho.
+}
+
+renderizarLivrosCarrinho(){
+    
+}
+
+renderizarLivrosCarrinho()
+
 const catalogo = document.getElementById('catalogo');
 const pesquisa = document.getElementById('pesquisa');
 
@@ -38,7 +50,7 @@ function renderizarLivros() {
                 <p class="titulo">${livro.titulo}</p>
                 <p class="autor">${livro.autor}</p>
                 <p class="categoria">${livro.categoria}</p>
-                <button>Adicionar ao Carrinho</button>
+                <button onclick="addCarrinho()">Adicionar ao Carrinho</button>
             </div>
             `
     })
