@@ -3,7 +3,7 @@ const livros = [
         id: 1,
         capa: '/img/pequenoprincipe.jpg',
         titulo: 'O Pequeno Príncipe',
-        autor: 'Antoine de Saint-Exupéry', 
+        autor: 'Antoine de Saint-Exupéry',
         categoria: 'Literatura Infantil'
     },
 
@@ -11,7 +11,7 @@ const livros = [
         id: 2,
         capa: '/img/domquixote.jpg',
         titulo: 'Dom Quixote',
-        autor: 'Miguel de Cervantes', 
+        autor: 'Miguel de Cervantes',
         categoria: 'Romance'
     },
 
@@ -19,7 +19,7 @@ const livros = [
         id: 3,
         capa: '/img/coraline.jpg',
         titulo: 'Coraline',
-        autor: 'Neil Gaiman', 
+        autor: 'Neil Gaiman',
         categoria: 'Fantasia e Ficção  Científica'
     },
 
@@ -28,10 +28,10 @@ const livros = [
 const catalogo = document.getElementById('catalogo');
 const pesquisa = document.getElementById('pesquisa');
 
-function renderizarLivros(){
+function renderizarLivros() {
     catalogo.innerHTML = '';
 
-    livros.forEach(livro =>{
+    livros.forEach(livro => {
         catalogo.innerHTML += `
             <div class="cards">
                 <img src="${livro.capa}" alt="${livro.titulo}_imagem">
@@ -48,9 +48,9 @@ function renderizarLivros(){
 
 renderizarLivros()
 
-function filtrarLivros(){
+function filtrarLivros() {
     const termoPesquisa = pesquisa.value.toLowerCase();
-    const livrosFiltrados = livros.filter(livro => 
+    const livrosFiltrados = livros.filter(livro =>
         livro.titulo.toLowerCase().includes(termoPesquisa) ||
         livro.autor.toLowerCase().includes(termoPesquisa) ||
         livro.categoria.toLowerCase().includes(termoPesquisa)
@@ -58,7 +58,7 @@ function filtrarLivros(){
 
     catalogo.innerHTML = '';
 
-    livrosFiltrados.forEach(livro =>{
+    livrosFiltrados.forEach(livro => {
         catalogo.innerHTML += `
             <div class="cards">
                 <img src="${livro.capa}" alt="${livro.titulo}_imagem">
@@ -69,13 +69,14 @@ function filtrarLivros(){
             </div>
             `
     }
-)}
+    )
+}
 
 pesquisa.addEventListener('input', filtrarLivros);
 
 const telaUpagem = document.getElementById('telaUpagem');
 const devIcon = document.getElementById('dev-icon');
-devIcon.addEventListener('click', () =>{
+devIcon.addEventListener('click', () => {
     if (telaUpagem.style.display === 'block') {
         telaUpagem.style.display = 'none';
     } else {
@@ -87,7 +88,7 @@ telaUpagem.addEventListener('click', (event) => {
     event.stopPropagation();
 });
 
-function addLivro(capaUpada, tituloUpado, autorUpado, categoriaUpada){
+function addLivro(capaUpada, tituloUpado, autorUpado, categoriaUpada) {
     const novoLivro = {
         id: livros.length + 1,
         capa: capaUpada.value,
