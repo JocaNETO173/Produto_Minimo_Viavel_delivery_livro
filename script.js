@@ -28,11 +28,24 @@ const livros = [
 const carrinho = []
 
 function addCarrinho() {
-    carrinho.
+    carrinho.push(livro);
+    renderizarLivrosCarrinho();
 }
 
-renderizarLivrosCarrinho(){
-    
+function renderizarLivrosCarrinho() {
+    const c = document.getElementById('card-carrinho');
+    c.innerHTML = '';
+
+    carrinho.forEach(livro => {
+        c.innerHTML += `
+            <div class="carrinho-cards">
+                <img src="${livro.capa}" alt="${livro.titulo}_imagem">
+                <p class="titulo">${livro.titulo}</p>
+                <p class="autor">${livro.autor}</p>
+                <p class="categoria">${livro.categoria}</p>
+            </div>
+        `;
+    });
 }
 
 renderizarLivrosCarrinho()
@@ -50,7 +63,7 @@ function renderizarLivros() {
                 <p class="titulo">${livro.titulo}</p>
                 <p class="autor">${livro.autor}</p>
                 <p class="categoria">${livro.categoria}</p>
-                <button onclick="addCarrinho()">Adicionar ao Carrinho</button>
+                <button onclick="addCarrinho(livro)">Adicionar ao Carrinho</button>
             </div>
             `
     })

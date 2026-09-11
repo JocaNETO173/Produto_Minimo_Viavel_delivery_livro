@@ -26,6 +26,12 @@
         background-color: rgb(218, 218, 218);
         border-radius: 35px;
     }
+
+    .carrinho-cards img {
+    height: 150px;
+    max-width: 150px;
+    object-fit: contain;
+}
 </style>
 
 <body>
@@ -48,10 +54,10 @@
         carrinho.forEach(cLivro => {
             c.innerHTML += `
                 <div class="cards">
-                    <img src="${livro.capa}" alt="${livro.titulo}_imagem">
-                    <p class="titulo">${livro.titulo}</p>
-                    <p class="autor">${livro.autor}</p>
-                    <p class="categoria">${livro.categoria}</p>
+                    <img src="${cLivro.capa}" alt="${cLivro.titulo}_imagem">
+                    <p class="titulo">${cLivro.titulo}</p>
+                    <p class="autor">${cLivro.autor}</p>
+                    <p class="categoria">${cLivro.categoria}</p>
                 </div>
                 `
         })
