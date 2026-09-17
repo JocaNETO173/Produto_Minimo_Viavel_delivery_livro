@@ -28,31 +28,73 @@
     }
 
     .carrinho-cards img {
-    height: 150px;
-    max-width: 150px;
-    object-fit: contain;
-}
+        height: 150px;
+        max-width: 150px;
+        object-fit: contain;
+    }
+
+    #tela-carrinho {
+        position: absolute;
+        /* Para posicionar em relação ao .dev-icon */
+        top: 100%;
+        /* Abre logo abaixo do .dev-icon */
+        left: -200px;
+        /* Alinha à esquerda do .dev-icon */
+        width: 300px;
+        /* Define a largura da caixinha */
+        background-color: #e05555;
+        /* Fundo branco */
+        border: 1px solid #ccc;
+        /* Borda cinza */
+        border-radius: 10px;
+        /* Bordas arredondadas */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        /* Sombra para destaque */
+        padding: 15px;
+        /* Espaçamento interno */
+        /* display: none; */
+        /* Inicialmente escondida */
+        z-index: 1000;
+        /* Garante que fique acima de outros elementos */
+    }
+
+    #shop-icon {
+        background-image: url('./img/shopping-cart.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 65px;
+        height: 65px;
+        margin-right: 100px;
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+    }
 </style>
 
 <body>
-    <div class="card-carrinho" id="card-carrinho">
+    <div id="shop-icon">
+        <div id="tela-carrinho">
+            <div class="card-carrinho" id="card-carrinho">
 
-    </div>
-    <script>
-        const carrinho = [
-            {
-                id: 1,
-                capa: '/img/pequenoprincipe.jpg',
-                titulo: 'O Pequeno Príncipe',
-                autor: 'Antoine de Saint-Exupéry',
-                categoria: 'Literatura Infantil'
-            }
-        ]
+            </div>
+        </div>
 
-        const c = document.getElementById('card-carrinho');
-        c.innerHTML = "";
-        carrinho.forEach(cLivro => {
-            c.innerHTML += `
+        <script>
+            const carrinho = [
+                {
+                    id: 1,
+                    capa: '/img/pequenoprincipe.jpg',
+                    titulo: 'O Pequeno Príncipe',
+                    autor: 'Antoine de Saint-Exupéry',
+                    categoria: 'Literatura Infantil'
+                }
+            ]
+
+            const c = document.getElementById('card-carrinho');
+            c.innerHTML = "";
+            carrinho.forEach(cLivro => {
+                c.innerHTML += `
                 <div class="cards">
                     <img src="${cLivro.capa}" alt="${cLivro.titulo}_imagem">
                     <p class="titulo">${cLivro.titulo}</p>
@@ -60,9 +102,9 @@
                     <p class="categoria">${cLivro.categoria}</p>
                 </div>
                 `
-        })
-            ;
-    </script>
+            })
+                ;
+        </script>
 </body>
 
 </html>

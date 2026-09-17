@@ -60,10 +60,23 @@ header img {
     background-position: center;
     width: 65px;
     height: 65px;
-    margin-right: 100px;
     cursor: pointer;
     position: relative;
     display: inline-block;
+}
+
+#tela-carrinho {
+    position: absolute; /* Para posicionar em relação ao .dev-icon */
+    top: 100%; /* Abre logo abaixo do .dev-icon */
+    left: -200px; /* Alinha à esquerda do .dev-icon */
+    width: 300px; /* Define a largura da caixinha */
+    background-color: #ffffff; /* Fundo branco */
+    border: 1px solid #ccc; /* Borda cinza */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+    padding: 15px; /* Espaçamento interno */
+    display: none; /* Inicialmente escondida */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
 }
 
 #shop-icon {
@@ -73,7 +86,7 @@ header img {
     background-position: center;
     width: 65px;
     height: 65px;
-    margin-right: 50px;
+    margin-right: 100px;
     cursor: pointer;
     position: relative;
     display: inline-block;
