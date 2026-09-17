@@ -54,7 +54,7 @@ header img {
 }
 
 #dev-icon {
-    background-image: url(../img/code.png);
+    background-image: url("img/code.png");
     background-size: cover;
     width: 65px;
     height: 65px;
