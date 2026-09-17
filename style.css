@@ -54,14 +54,29 @@ header img {
 }
 
 #dev-icon {
-    background-image: url("img/code.png");
+    background-image: url('./img/code.png');
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     width: 65px;
     height: 65px;
     margin-right: 100px;
     cursor: pointer;
     position: relative;
+    display: inline-block;
+}
 
+#shop-icon {
+    background-image: url('./img/shopping-cart.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 65px;
+    height: 65px;
+    margin-right: 50px;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
 }
 
 #livros {
