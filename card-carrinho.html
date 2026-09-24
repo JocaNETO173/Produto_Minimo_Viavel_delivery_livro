@@ -14,20 +14,12 @@
     }
 
     .card-carrinho {
-        width: 550px;
-        height: 740px;
-        background-color: rgb(187, 187, 187);
-        border-radius: 35px;
-    }
-
-    .cards {
         width: 100%;
         height: 150px;
-        background-color: rgb(218, 218, 218);
-        border-radius: 35px;
     }
 
-    .carrinho-cards img {
+
+    .card-carrinho img {
         height: 150px;
         max-width: 150px;
         object-fit: contain;
@@ -35,27 +27,25 @@
 
     #tela-carrinho {
         position: absolute;
-        /* Para posicionar em relação ao .dev-icon */
         top: 100%;
-        /* Abre logo abaixo do .dev-icon */
-        left: -200px;
-        /* Alinha à esquerda do .dev-icon */
+        height: 500px;
         width: 300px;
-        /* Define a largura da caixinha */
-        background-color: #e05555;
-        /* Fundo branco */
-        border: 1px solid #ccc;
-        /* Borda cinza */
-        border-radius: 10px;
-        /* Bordas arredondadas */
+        background-color: #d9d9d9;
+        border: 5px solid #000000;
+        border-radius: 25px;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        /* Sombra para destaque */
         padding: 15px;
-        /* Espaçamento interno */
         /* display: none; */
-        /* Inicialmente escondida */
         z-index: 1000;
-        /* Garante que fique acima de outros elementos */
+        cursor: auto;
+    }
+
+    #carrinho-livros {
+        background-color: whitesmoke;
+        border-radius: 25px;
+        height: 150px;
+
+
     }
 
     #shop-icon {
@@ -75,9 +65,11 @@
 <body>
     <div id="shop-icon">
         <div id="tela-carrinho">
-            <div class="card-carrinho" id="card-carrinho">
+            <h2>Meu Carrinho</h2>
+            <div id="carrinho-livros">
 
             </div>
+
         </div>
 
         <script>
@@ -91,12 +83,11 @@
                 }
             ]
 
-            const c = document.getElementById('card-carrinho');
+            const c = document.getElementById('carrinho-livros');
             c.innerHTML = "";
             carrinho.forEach(cLivro => {
                 c.innerHTML += `
-                <div class="cards">
-                    <img src="${cLivro.capa}" alt="${cLivro.titulo}_imagem">
+                <div class="card-carrinho">
                     <p class="titulo">${cLivro.titulo}</p>
                     <p class="autor">${cLivro.autor}</p>
                     <p class="categoria">${cLivro.categoria}</p>
