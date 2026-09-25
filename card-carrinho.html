@@ -12,20 +12,10 @@
         padding: 0;
         margin: 0;
     }
-
-    .card-carrinho {
-        width: 100%;
-        height: 150px;
-    }
-
-
-    .card-carrinho img {
-        height: 150px;
-        max-width: 150px;
-        object-fit: contain;
-    }
-
+    
     #tela-carrinho {
+        display: flex;
+        flex-direction: column;
         position: absolute;
         top: 100%;
         height: 500px;
@@ -39,14 +29,34 @@
         z-index: 1000;
         cursor: auto;
     }
-
+    
     #carrinho-livros {
+        display: flex;
+        flex-direction: column;
         background-color: whitesmoke;
         border-radius: 25px;
-        height: 150px;
+        height: 460px;
 
 
     }
+
+    .card-carrinho {
+        width: 100%;
+        height: 78px;
+        padding: 15px;
+    }
+
+    .card-barra {
+        width: 80%;
+        height: 5px;
+        
+        background-color: #b4b4b4;
+    }
+
+
+    
+
+    
 
     #shop-icon {
         background-image: url('./img/shopping-cart.png');
@@ -79,7 +89,16 @@
                     capa: '/img/pequenoprincipe.jpg',
                     titulo: 'O Pequeno Príncipe',
                     autor: 'Antoine de Saint-Exupéry',
-                    categoria: 'Literatura Infantil'
+                    categoria: 'Literatura Infantil',
+                    preco: '$59.90'
+                },
+                {
+                    id: 2,
+                    capa: '',
+                    titulo: '1984',
+                    autor: 'George Orwell',
+                    categoria: 'Ficção Distópica',
+                    preco: '$39.90'
                 }
             ]
 
@@ -89,9 +108,9 @@
                 c.innerHTML += `
                 <div class="card-carrinho">
                     <p class="titulo">${cLivro.titulo}</p>
-                    <p class="autor">${cLivro.autor}</p>
-                    <p class="categoria">${cLivro.categoria}</p>
+                    <p class="preco">${cLivro.preco}</p>
                 </div>
+                <div class="card-barra"></div>
                 `
             })
                 ;
