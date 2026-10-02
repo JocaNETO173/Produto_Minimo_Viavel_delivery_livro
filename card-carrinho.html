@@ -12,7 +12,7 @@
         padding: 0;
         margin: 0;
     }
-    
+
     #tela-carrinho {
         display: flex;
         flex-direction: column;
@@ -29,34 +29,74 @@
         z-index: 1000;
         cursor: auto;
     }
-    
+
     #carrinho-livros {
         display: flex;
         flex-direction: column;
         background-color: whitesmoke;
         border-radius: 25px;
         height: 460px;
-
-
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 10px;
+        box-sizing: border-box;
     }
 
     .card-carrinho {
+        display: grid;
+        grid-template-areas:
+            "imagem titulo preco"
+            "imagem autor preco";
+        grid-template-columns: 80px 1fr auto;
+        grid-template-rows: auto auto;
+        gap: 5px;
         width: 100%;
-        height: 78px;
+        height: auto;
         padding: 15px;
+        font-weight: bolder;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+    .card-carrinho .imagem {
+        grid-area: imagem;
+        width: 60px;
+        height: 60px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 5px;
+    }
+
+    .card-carrinho .titulo {
+        grid-area: titulo;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .card-carrinho .autor {
+        grid-area: autor;
+        font-size: 14px;
+        color: #555;
+    }
+
+    .card-carrinho .preco {
+        grid-area: preco;
+        font-size: 16px;
+        text-align: right;
+        font-weight: bold;
     }
 
     .card-barra {
         width: 80%;
         height: 5px;
-        
+
         background-color: #b4b4b4;
     }
 
 
-    
 
-    
+
+
 
     #shop-icon {
         background-image: url('./img/shopping-cart.png');
@@ -107,13 +147,14 @@
             carrinho.forEach(cLivro => {
                 c.innerHTML += `
                 <div class="card-carrinho">
+                    <div class="imagem" style="background-image: url('${cLivro.capa || './img/default.jpg'}');"></div>
                     <p class="titulo">${cLivro.titulo}</p>
+                    <p class="autor">${cLivro.autor}</p>
                     <p class="preco">${cLivro.preco}</p>
                 </div>
                 <div class="card-barra"></div>
-                `
-            })
-                ;
+                `;
+            });
         </script>
 </body>
 

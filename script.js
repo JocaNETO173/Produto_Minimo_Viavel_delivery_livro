@@ -26,25 +26,44 @@ const livros = [
 ]
 
 const carrinho = []
+const botaoCarrinho = document.getElementById('botaoCarrinho');
 
-function addCarrinho() {
+function addCarrinho(livro) {
     carrinho.push(livro);
+
+    botaoCarrinho.textContent = 'Adicionado ao Carrinho!';
+
+
     renderizarLivrosCarrinho();
 }
 
-function renderizarLivrosCarrinho() {
-    const c = document.getElementById('card-carrinho');
-    c.innerHTML = '';
+const telaCarrinho = document.getElementById('tela-carrinho');
+const shopIcon = document.getElementById('shop-icon');
+shopIcon.addEventListener('click', () => {
+    if (telaCarrinho.style.display === 'block') {
+        telaCarrinho.style.display = 'none';
+    } else {
+        telaCarrinho.style.display = 'block';
+    }
+})
 
-    carrinho.forEach(livro => {
+telaCarrinho.addEventListener('click', (event) => {
+    event.stopPropagation();
+});
+
+function renderizarLivrosCarrinho() {
+    const c = document.getElementById('carrinho-livros');
+    c.innerHTML = "";
+    carrinho.forEach(cLivro => {
         c.innerHTML += `
-            <div class="carrinho-cards">
-                <img src="${livro.capa}" alt="${livro.titulo}_imagem">
-                <p class="titulo">${livro.titulo}</p>
-                <p class="autor">${livro.autor}</p>
-                <p class="categoria">${livro.categoria}</p>
+            <div class="card-carrinho">
+                <div class="imagem" style="background-image: url('${cLivro.capa || './img/default.jpg'}');"></div>
+                <p class="titulo">${cLivro.titulo}</p>
+                <p class="autor">${cLivro.autor}</p>
+                <p class="preco">${cLivro.preco}</p>
             </div>
-        `;
+            <div class="card-barra"></div>
+            `;
     });
 }
 
@@ -63,7 +82,7 @@ function renderizarLivros() {
                 <p class="titulo">${livro.titulo}</p>
                 <p class="autor">${livro.autor}</p>
                 <p class="categoria">${livro.categoria}</p>
-                <button onclick="addCarrinho(livro)">Adicionar ao Carrinho</button>
+                <button id="botaoCarrinho" onclick="addCarrinho(livro)">Adicionar ao Carrinho</button>
             </div>
             `
     })

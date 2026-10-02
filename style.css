@@ -39,9 +39,7 @@ header {
 }
 
 #principal img {
-    filter: drop-shadow(5px 5px 0px black)
-            drop-shadow(2px 2px 0px black)
-            drop-shadow(1px 1px 0px black);
+    filter: drop-shadow(5px 5px 0px black) drop-shadow(2px 2px 0px black) drop-shadow(1px 1px 0px black);
 }
 
 header img {
@@ -66,17 +64,28 @@ header img {
 }
 
 #tela-carrinho {
-    position: absolute; /* Para posicionar em relação ao .dev-icon */
-    top: 100%; /* Abre logo abaixo do .dev-icon */
-    left: -200px; /* Alinha à esquerda do .dev-icon */
-    width: 300px; /* Define a largura da caixinha */
-    background-color: #ffffff; /* Fundo branco */
-    border: 1px solid #ccc; /* Borda cinza */
-    border-radius: 10px; /* Bordas arredondadas */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
-    padding: 15px; /* Espaçamento interno */
-    display: none; /* Inicialmente escondida */
-    z-index: 1000; /* Garante que fique acima de outros elementos */
+    position: absolute;
+    /* Para posicionar em relação ao .dev-icon */
+    top: 100%;
+    /* Abre logo abaixo do .dev-icon */
+    left: -200px;
+    /* Alinha à esquerda do .dev-icon */
+    width: 300px;
+    /* Define a largura da caixinha */
+    background-color: #ffffff;
+    /* Fundo branco */
+    border: 1px solid #ccc;
+    /* Borda cinza */
+    border-radius: 10px;
+    /* Bordas arredondadas */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra para destaque */
+    padding: 15px;
+    /* Espaçamento interno */
+    display: none;
+    /* Inicialmente escondida */
+    z-index: 1000;
+    /* Garante que fique acima de outros elementos */
 }
 
 #shop-icon {
@@ -131,7 +140,7 @@ header img {
     gap: 35px;
     overflow-y: auto;
     justify-items: center;
-    
+
     border: solid grey;
     margin-top: 20px;
     width: 90vw;
@@ -198,17 +207,28 @@ header img {
 }
 
 .telaUpagem {
-    position: absolute; /* Para posicionar em relação ao .dev-icon */
-    top: 100%; /* Abre logo abaixo do .dev-icon */
-    left: -200px; /* Alinha à esquerda do .dev-icon */
-    width: 300px; /* Define a largura da caixinha */
-    background-color: #ffffff; /* Fundo branco */
-    border: 1px solid #ccc; /* Borda cinza */
-    border-radius: 10px; /* Bordas arredondadas */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
-    padding: 15px; /* Espaçamento interno */
-    display: none; /* Inicialmente escondida */
-    z-index: 1000; /* Garante que fique acima de outros elementos */
+    position: absolute;
+    /* Para posicionar em relação ao .dev-icon */
+    top: 100%;
+    /* Abre logo abaixo do .dev-icon */
+    left: -200px;
+    /* Alinha à esquerda do .dev-icon */
+    width: 300px;
+    /* Define a largura da caixinha */
+    background-color: #ffffff;
+    /* Fundo branco */
+    border: 1px solid #ccc;
+    /* Borda cinza */
+    border-radius: 10px;
+    /* Bordas arredondadas */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra para destaque */
+    padding: 15px;
+    /* Espaçamento interno */
+    display: none;
+    /* Inicialmente escondida */
+    z-index: 1000;
+    /* Garante que fique acima de outros elementos */
 }
 
 .telaUpagem h1 {
@@ -245,4 +265,97 @@ header img {
 
 .telaUpagem button:hover {
     background-color: #3a8bd6;
+}
+
+#tela-carrinho {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    height: 500px;
+    width: 300px;
+    background-color: #d9d9d9;
+    border: 5px solid #000000;
+    border-radius: 25px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    display: none;
+    z-index: 1000;
+    cursor: auto;
+}
+
+#carrinho-livros {
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    border-radius: 25px;
+    height: 460px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.card-carrinho {
+    display: grid;
+    grid-template-areas:
+        "imagem titulo preco"
+        "imagem autor preco";
+    grid-template-columns: 80px 1fr auto;
+    grid-template-rows: auto auto;
+    gap: 5px;
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    font-weight: bolder;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.card-carrinho .imagem {
+    grid-area: imagem;
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+}
+
+.card-carrinho .titulo {
+    grid-area: titulo;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.card-carrinho .autor {
+    grid-area: autor;
+    font-size: 14px;
+    color: #555;
+}
+
+.card-carrinho .preco {
+    grid-area: preco;
+    font-size: 16px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.card-barra {
+    width: 80%;
+    height: 5px;
+
+    background-color: #b4b4b4;
+}
+
+#shop-icon {
+    background-image: url('./img/shopping-cart.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 65px;
+    height: 65px;
+    margin-right: 100px;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
 }
