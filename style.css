@@ -65,27 +65,16 @@ header img {
 
 #tela-carrinho {
     position: absolute;
-    /* Para posicionar em relação ao .dev-icon */
     top: 100%;
-    /* Abre logo abaixo do .dev-icon */
     left: -200px;
-    /* Alinha à esquerda do .dev-icon */
     width: 300px;
-    /* Define a largura da caixinha */
     background-color: #ffffff;
-    /* Fundo branco */
     border: 1px solid #ccc;
-    /* Borda cinza */
     border-radius: 10px;
-    /* Bordas arredondadas */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    /* Sombra para destaque */
     padding: 15px;
-    /* Espaçamento interno */
     display: none;
-    /* Inicialmente escondida */
     z-index: 1000;
-    /* Garante que fique acima de outros elementos */
 }
 
 #shop-icon {
@@ -289,11 +278,25 @@ header img {
     flex-direction: column;
     background-color: whitesmoke;
     border-radius: 25px;
-    height: 460px;
+    height: 400px;
     overflow-y: auto;
     overflow-x: hidden;
     padding: 10px;
     box-sizing: border-box;
+}
+
+#preco-total {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.areaPreco {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
 }
 
 .card-carrinho {

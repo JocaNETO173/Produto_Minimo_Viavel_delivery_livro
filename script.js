@@ -4,7 +4,8 @@ const livros = [
         capa: '/img/pequenoprincipe.jpg',
         titulo: 'O Pequeno Príncipe',
         autor: 'Antoine de Saint-Exupéry',
-        categoria: 'Literatura Infantil'
+        categoria: 'Literatura Infantil',
+        preco: 'R$ 29,90'
     },
 
     {
@@ -12,7 +13,8 @@ const livros = [
         capa: '/img/domquixote.jpg',
         titulo: 'Dom Quixote',
         autor: 'Miguel de Cervantes',
-        categoria: 'Romance'
+        categoria: 'Romance',
+        preco: 'R$ 39,90'
     },
 
     {
@@ -20,21 +22,35 @@ const livros = [
         capa: '/img/coraline.jpg',
         titulo: 'Coraline',
         autor: 'Neil Gaiman',
-        categoria: 'Fantasia e Ficção  Científica'
+        categoria: 'Fantasia e Ficção  Científica',
+        preco: 'R$ 24,90'
     },
 
 ]
 
 const carrinho = []
-const botaoCarrinho = document.getElementById('botaoCarrinho');
+let precoTotal = 0;
 
-function addCarrinho(livro) {
-    carrinho.push(livro);
+function calcularPrecoTotal() {
+    precoTotal = carrinho.reduce((total, livro) => {
+        const precoNumerico = parseFloat(livro.preco.replace('R$ ', '').replace(',', '.'));
+        return total + precoNumerico;
+    }, 0);
 
-    botaoCarrinho.textContent = 'Adicionado ao Carrinho!';
+    const precoTotalElement = document.getElementById('preco-total');
+    precoTotalElement.textContent = `Preço Total: R$ ${precoTotal.toFixed(2).replace('.', ',')}`;
+}
 
-
-    renderizarLivrosCarrinho();
+function addCarrinho(id, botao) {
+    const livroSelecionado = livros.find(livro => livro.id === id);
+    if (livroSelecionado) {
+        carrinho.push(livroSelecionado);
+        botao.textContent = 'Adicionado ao Carrinho!';
+        renderizarLivrosCarrinho();
+        setInterval(() => {
+            botao.textContent = 'Adicionar ao Carrinho';
+        }, 2000);
+    }
 }
 
 const telaCarrinho = document.getElementById('tela-carrinho');
@@ -82,7 +98,8 @@ function renderizarLivros() {
                 <p class="titulo">${livro.titulo}</p>
                 <p class="autor">${livro.autor}</p>
                 <p class="categoria">${livro.categoria}</p>
-                <button id="botaoCarrinho" onclick="addCarrinho(livro)">Adicionar ao Carrinho</button>
+                <p class="preco">${livro.preco}</p>
+                <button class="botaoCarrinho" onclick="addCarrinho(${livro.id}, this)">Adicionar ao Carrinho</button>
             </div>
             `
     })
@@ -109,7 +126,7 @@ function filtrarLivros() {
                 <p class="titulo">${livro.titulo}</p>
                 <p class="autor">${livro.autor}</p>
                 <p class="categoria">${livro.categoria}</p>
-                <button>Adicionar ao Carrinho</button>
+                <button class="botaoCarrinho" onclick="addCarrinho(${livro.id}, this)">Adicionar ao Carrinho</button>
             </div>
             `
     }
