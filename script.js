@@ -25,6 +25,30 @@ const livros = [
         categoria: 'Fantasia e Ficção  Científica',
         preco: 'R$ 24,90'
     },
+    {
+        id: 4,
+        capa: '/img/harrypotter.jpg',
+        titulo: 'Harry Potter e a Pedra Filosofal',
+        autor: 'J.K. Rowling',
+        categoria: 'Fantasia e Ficção Científica',
+        preco: 'R$ 34,90'
+    },
+    {
+        id: 5,
+        capa: '/img/1984.jpg',
+        titulo: '1984',
+        autor: 'George Orwell',
+        categoria: 'Distopia e Ficção Científica',
+        preco: 'R$ 29,90'
+    },
+    {
+        id: 6,
+        capa: '/img/hobbit.jpg',
+        titulo: 'O Hobbit',
+        autor: 'J.R.R. Tolkien',
+        categoria: 'Fantasia e Ficção Científica',
+        preco: 'R$ 39,90'
+    }
 
 ]
 
@@ -51,6 +75,7 @@ function addCarrinho(id, botao) {
             botao.textContent = 'Adicionar ao Carrinho';
         }, 2000);
     }
+    calcularPrecoTotal()
 }
 
 const telaCarrinho = document.getElementById('tela-carrinho');
@@ -67,12 +92,24 @@ telaCarrinho.addEventListener('click', (event) => {
     event.stopPropagation();
 });
 
+function excluirLivroCarrinho(id) {
+    const index = carrinho.findIndex(livro => livro.id === id);
+    if (index !== -1) {
+        carrinho.splice(index, 1);
+        renderizarLivrosCarrinho();
+        calcularPrecoTotal();
+    }
+}
+
 function renderizarLivrosCarrinho() {
     const c = document.getElementById('carrinho-livros');
     c.innerHTML = "";
     carrinho.forEach(cLivro => {
         c.innerHTML += `
             <div class="card-carrinho">
+                <div class="card-carrinho-excluir">
+                    <button class="botaoExcluir" onclick="excluirLivroCarrinho(${cLivro.id})">X</button>
+                </div>
                 <div class="imagem" style="background-image: url('${cLivro.capa || './img/default.jpg'}');"></div>
                 <p class="titulo">${cLivro.titulo}</p>
                 <p class="autor">${cLivro.autor}</p>

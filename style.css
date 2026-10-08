@@ -300,6 +300,7 @@ header img {
 }
 
 .card-carrinho {
+    position: relative;
     display: grid;
     grid-template-areas:
         "imagem titulo preco"
@@ -313,6 +314,12 @@ header img {
     font-weight: bolder;
     align-items: center;
     box-sizing: border-box;
+}
+
+.card-carrinho .botaoExcluir {
+    position: absolute;
+    top: 8px;
+    right: 8px;
 }
 
 .card-carrinho .imagem {
@@ -346,8 +353,8 @@ header img {
 .card-barra {
     width: 80%;
     height: 5px;
-
     background-color: #b4b4b4;
+    margin: 10px auto;
 }
 
 #shop-icon {
@@ -361,4 +368,13 @@ header img {
     cursor: pointer;
     position: relative;
     display: inline-block;
+}
+
+.botaoExcluir {
+    background-color: rgb(202, 28, 28);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
 }
